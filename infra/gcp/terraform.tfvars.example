@@ -1,0 +1,7 @@
+project_id = "your-gcp-project-id"
+region = "asia-south1"
+image = "asia-south1-docker.pkg.dev/your-gcp-project-id/aura/workspace:latest"
+min_instances = 0
+# Set true only for intentional persisted-data teardown:
+database_deletion_protection = true
+artifact_force_destroy = false

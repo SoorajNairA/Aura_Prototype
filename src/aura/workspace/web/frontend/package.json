@@ -1,0 +1,39 @@
+{
+  "name": "aura-representation-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest run --passWithNoTests --exclude e2e/**",
+    "test:browser": "npm run build && playwright test"
+    ,"electron:dev": "set ELECTRON_RUN_AS_NODE=&& electron electron/main.cjs"
+    ,"test:electron": "set ELECTRON_RUN_AS_NODE=&& electron electron/main.cjs --smoke"
+    ,"package": "electron-forge package"
+    ,"make": "electron-forge make"
+  },
+  "dependencies": {
+    "@tscircuit/core": "0.0.1609",
+    "@tscircuit/schematic-viewer": "2.0.76",
+    "cascade-core": "2.0.6",
+    "circuit-json": "0.0.464",
+    "motion": "13.0.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "three": "0.185.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "7.11.2",
+    "@electron-forge/maker-zip": "7.11.2",
+    "@playwright/test": "1.62.1",
+    "@types/react": "18.3.24",
+    "@types/react-dom": "18.3.7",
+    "@types/three": "0.185.0",
+    "@vitejs/plugin-react": "5.1.4",
+    "electron": "43.3.0",
+    "typescript": "5.9.3",
+    "vite": "7.3.6",
+    "vitest": "3.2.7"
+  }
+}

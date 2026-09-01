@@ -1,0 +1,111 @@
+# Python
+
+**pycache**/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Environment / Secrets
+
+.env
+.env.local
+.env.*.local
+
+# Logs and Runtime Data
+
+logs/
+*.log
+*.jsonl
+memory/
+/workspace/
+runtime/
+DemoWorkspace/
+Code/
+notes.txt
+
+# Temporary Files
+
+temp/
+tmp/
+tts_cache/
+*.tmp
+
+# Model Storage
+
+models/
+.cache/
+huggingface/
+torch_cache/
+
+# AI Model Files
+
+*.pth
+*.pt
+*.bin
+*.onnx
+*.gguf
+*.safetensors
+
+# Voice Cloning Files
+
+voices/*.wav
+voices/*.mp3
+voices/*.flac
+
+# Keep voice folder structure
+
+!voices/.gitkeep
+!voices/README.md
+
+# IDE
+
+.vscode/
+.idea/
+
+# Build Artifacts
+
+node_modules/
+src/aura/workspace/web/frontend/out/
+src/aura/workspace/web/frontend/out-stale-goal11/
+dist/
+build/
+generated/
+site/
+playwright-report/
+test-results/
+*.tsbuildinfo
+
+# Diagnostics
+
+diagnostics_report.md
+
+# Terraform local state and private variable files
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!terraform.tfvars.example
+
+# Local Scratch Files
+
+_test*.py
+
+# OS Files
+
+Thumbs.db
+.DS_Store
+
+# Git LFS leftovers (safety)
+
+.gitattributes

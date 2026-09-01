@@ -1,0 +1,30 @@
+.sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0,0,0,0) !important; white-space: nowrap !important; border: 0 !important; }
+.semantic-parts { display: flex; flex: 1; min-height: 0; flex-direction: column; gap: 5px; overflow: auto; scrollbar-width: thin; }
+.semantic-parts button { width: 100%; padding: 3px 5px; color: #adb3b6; font-size: 9px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tree-group { display: flex; flex-direction: column; gap: 1px; }
+.tree-group .tree-heading { border-bottom: 1px solid #34383a; color: #d0d3d4; font-weight: 700; }
+.tree-group button:not(.tree-heading) { padding-left: 13px; color: #959da1; text-transform: none; }
+.project-switch { display: flex; min-width: 240px; max-width: 500px; flex-direction: column; align-items: flex-start; border: 0; background: transparent; padding: 4px 8px; }
+.project-switch strong { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.project-switch small { order: -1; font: 8px ui-monospace, Consolas, monospace; }
+.revision-switch { border: 0; border-left: 1px solid var(--line); background: transparent; font: 10px ui-monospace, Consolas, monospace; }
+.capability-state { color: var(--text-dim); font: 9px ui-monospace, Consolas, monospace; }
+.context-panel { position: absolute; z-index: 25; left: 88px; top: 58px; width: 380px; max-height: 65vh; overflow: auto; padding: 16px; border: 1px solid var(--line); background: #181e22; }
+.context-panel > .close { position: absolute; right: 8px; top: 6px; border: 0; background: transparent; font-size: 16px; }
+.context-panel > small { color: var(--text-dim); font: 10px ui-monospace, Consolas, monospace; }
+.context-list { display: flex; flex-direction: column; gap: 3px; margin-top: 12px; }
+.context-list > button, .context-list > div { display: flex; justify-content: space-between; gap: 14px; padding: 9px; text-align: left; border: 1px solid var(--line); background: #20272c; }
+.context-list b { font-size: 10px; font-weight: 500; }
+.context-list span { color: var(--text-dim); font-size: 9px; }
+.undo-context { margin-top: 12px; font-size: 9px; }
+.schematic-camera { position: absolute; inset: 0; overflow: hidden; touch-action: none; cursor: grab; background: #eeeeea; }
+.schematic-camera:active { cursor: grabbing; }
+.schematic-layer { position: absolute; inset: 0; transform-origin: 50% 50%; }
+.schematic-layer > div { width: 100% !important; height: 100% !important; }
+.schematic-controls { position: absolute; right: 10px; bottom: 10px; display: flex; gap: 2px; padding: 2px; border: 1px solid #697278; background: #f3f3ef; }
+.schematic-controls button { padding: 5px 8px; color: #252b2f; background: #f3f3ef; border-color: #899197; font-size: 9px; }
+.schematic svg { background: #eeeeea !important; filter: grayscale(1); }
+.schematic-nets { position: absolute; z-index: 3; left: 8px; top: 42px; display: flex; max-width: 180px; flex-direction: column; gap: 2px; }
+.schematic-nets::before { content: "NETS"; color: #4b5357; font-size: 8px; }
+.schematic-nets button { padding: 3px 5px; color: #252b2f; background: #f3f3ef; border-color: #899197; font-size: 8px; text-align: left; text-transform: uppercase; }
+.schematic-nets button.active { border-width: 2px; }

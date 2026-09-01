@@ -1,0 +1,4 @@
+# Install after the CUDA-enabled PyTorch build appropriate for this machine.
+-r requirements.txt
+spacy==3.7.5
+coqui-tts==0.25.3

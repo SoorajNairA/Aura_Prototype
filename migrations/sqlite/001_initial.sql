@@ -1,0 +1,2 @@
+-- SQLite schema version 1 is retained in SQLiteProjectRepository for backwards compatibility.
+-- This file records the equivalent initial migration for operators and future upgrades.

@@ -1,0 +1,94 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aura-agent"
+version = "0.1.0"
+description = "Local AI engineering workspace"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "python-dotenv==1.0.1",
+    "requests==2.32.3",
+    "Pint>=0.24,<1",
+]
+
+[project.scripts]
+aura = "aura.workspace.server:main"
+aura-assistant = "aura.legacy.assistant.main:main"
+aura-migrate-storage = "aura.infrastructure.persistence.storage_migration:main"
+aura-demo = "aura.workspace.demo:main"
+aura-diagnostics = "aura.workspace.diagnostics:main"
+aura-model-check = "aura.workspace.diagnostics:model_check"
+aura-pipeline-check = "aura.workspace.diagnostics:pipeline_check"
+
+[project.optional-dependencies]
+voice = [
+    "faster-whisper==1.1.1",
+    "numpy==1.26.4",
+    "sounddevice==0.5.1",
+    "soundfile==0.13.1",
+    "pyttsx3==2.98",
+]
+desktop = [
+    "PySide6==6.8.3",
+    "beautifulsoup4==4.12.3",
+    "lxml==5.3.0",
+]
+server = [
+    "fastapi>=0.115,<1",
+    "uvicorn>=0.34,<1",
+    "pydantic>=2.9,<3",
+]
+vertex = ["google-auth>=2.35,<3"]
+cloud = [
+    "google-auth>=2.35,<3",
+    "google-cloud-storage>=2.18,<4",
+    "psycopg[binary]>=3.2,<4",
+    "psycopg-pool>=3.2,<4",
+]
+xtts = [
+    "spacy==3.7.5",
+    "coqui-tts==0.25.3",
+]
+legacy-unreal = []
+dev = [
+    "pytest>=8,<9",
+    "pytest-timeout>=2.3,<3",
+    "httpx2==2.0.0",
+    "beautifulsoup4==4.12.3",
+    "lxml==5.3.0",
+    "numpy==1.26.4",
+    "sounddevice==0.5.1",
+    "soundfile==0.13.1",
+    "pyttsx3==2.98",
+    "faster-whisper==1.1.1",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"aura.legacy.ui" = ["qml/*.qml"]
+"aura.workspace" = ["web/*", "web/representation/*", "web/representation/assets/*", "web/frontend/*.json", "web/frontend/generators/tscircuit/*.mjs"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+    "unit: fast deterministic tests with no external services",
+    "integration: local integration tests using controlled adapters",
+    "live: opt-in tests that interact with real host services",
+    "voice: tests for speech input or output",
+    "desktop: tests for host desktop integration",
+    "llm: tests requiring or simulating a language-model provider",
+    "legacy: tests for archived or transitional functionality",
+    "unreal: tests for the opt-in Unreal legacy subsystem",
+    "slow: tests unsuitable for the default fast suite",
+    "vertex_live: opt-in tests that incur authenticated Vertex AI requests",
+    "gcp_live: opt-in tests that use configured Google Cloud resources",
+]
